@@ -4,7 +4,7 @@ fetch('assets/states.json')
     .then(response => response.json())
     .then(data => {
         states = data;  // Store the fetched data in the states variable
-        console.log(states); // Confirm that data is loaded
+        console.log("States' data loaded successfully!"); // Confirm that data is loaded
 
         const svg = d3.select("#india-map")
             .attr("width", "100%")

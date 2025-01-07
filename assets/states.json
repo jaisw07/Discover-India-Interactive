@@ -2,181 +2,181 @@
     "Andhra Pradesh": {
         "name": "Andhra Pradesh",
         "details": "Known for the famous Tirupati Balaji temple.",
-        "image": "images/tirupati.jpg"
+        "image": "images/AndhraPradesh.jpg"
     },
     "Arunachal Pradesh": {
         "name": "Arunachal Pradesh",
         "details": "Famous for its monasteries and serene landscapes.",
-        "image": "images/tawang.jpg"
+        "image": "images/ArunachalPradesh.jpg"
     },
     "Assam": {
         "name": "Assam",
         "details": "Known for Kaziranga National Park and tea plantations.",
-        "image": "images/kaziranga.jpg"
+        "image": "images/Assam.jpg"
     },
     "Karnataka": {
         "name": "Karnataka",
         "details": "Famous for Bengaluru, the Silicon Valley of India.",
-        "image": "images/bengaluru.jpg"
+        "image": "images/Karnataka.jpg"
     },
     "Bihar": {
         "name": "Bihar",
         "details": "Known for Bodh Gaya, the place of Buddha's enlightenment.",
-        "image": "images/bodhgaya.jpg"
+        "image": "images/Bihar.jpg"
     },
     "Chhattisgarh": {
         "name": "Chhattisgarh",
         "details": "Famous for its waterfalls and temples.",
-        "image": "images/chitrakoot.jpg"
+        "image": "images/Chhattisgarh.jpg"
     },
     "Goa": {
         "name": "Goa",
         "details": "Known for its beautiful beaches and vibrant nightlife.",
-        "image": "images/goa.jpg"
+        "image": "images/Goa.jpg"
     },
     "Gujarat": {
         "name": "Gujarat",
         "details": "Famous for the Rann of Kutch and Gir National Park.",
-        "image": "images/kutch.jpg"
+        "image": "images/Gujarat.jpg"
     },
     "Haryana": {
         "name": "Haryana",
         "details": "Known for its historical monuments and temples.",
-        "image": "images/kurukshetra.jpg"
+        "image": "images/Haryana.jpg"
     },
     "Himachal Pradesh": {
         "name": "Himachal Pradesh",
         "details": "Famous for its hill stations like Shimla and Manali.",
-        "image": "images/shimla.jpg"
+        "image": "images/HimachalPradesh.jpg"
     },
     "Jharkhand": {
         "name": "Jharkhand",
         "details": "Known for its waterfalls and national parks.",
-        "image": "images/hundru.jpg"
+        "image": "images/Jharkhand.jpg"
     },
     "Kerala": {
         "name": "Kerala",
         "details": "Known for its backwaters and houseboats.",
-        "image": "images/alleppey.jpg"
+        "image": "images/Kerala.jpg"
     },
     "Madhya Pradesh": {
         "name": "Madhya Pradesh",
         "details": "Famous for Khajuraho temples and wildlife reserves.",
-        "image": "images/khajuraho.jpg"
+        "image": "images/MadhyaPradesh.jpg"
     },
     "Maharashtra": {
         "name": "Maharashtra",
         "details": "Known for Mumbai, the financial capital of India.",
-        "image": "images/mumbai.jpg"
+        "image": "images/Maharashtra.jpg"
     },
     "Manipur": {
         "name": "Manipur",
         "details": "Famous for its classical dance and Loktak Lake.",
-        "image": "images/loktak.jpg"
+        "image": "images/Manipur.jpg"
     },
     "Meghalaya": {
         "name": "Meghalaya",
         "details": "Known for Cherrapunji and its living root bridges.",
-        "image": "images/cherrapunji.jpg"
+        "image": "images/Meghalaya.jpg"
     },
     "Mizoram": {
         "name": "Mizoram",
         "details": "Famous for its scenic landscapes and cultural festivals.",
-        "image": "images/aizawl.jpg"
+        "image": "images/Mizoram.jpg"
     },
     "Nagaland": {
         "name": "Nagaland",
         "details": "Known for its Hornbill Festival and tribal culture.",
-        "image": "images/kohima.jpg"
+        "image": "images/Nagaland.jpg"
     },
     "Odisha": {
         "name": "Odisha",
         "details": "Famous for the Jagannath Temple and Konark Sun Temple.",
-        "image": "images/konark.jpg"
+        "image": "images/Odisha.jpg"
     },
     "Punjab": {
         "name": "Punjab",
         "details": "Known for the Golden Temple in Amritsar.",
-        "image": "images/goldentemple.jpg"
+        "image": "images/Punjab.jpg"
     },
     "Rajasthan": {
         "name": "Rajasthan",
         "details": "Famous for its palaces, forts, and deserts.",
-        "image": "images/jaisalmer.jpg"
+        "image": "images/Rajasthan.jpg"
     },
     "Sikkim": {
         "name": "Sikkim",
         "details": "Known for its monasteries and scenic beauty.",
-        "image": "images/gangtok.jpg"
+        "image": "images/Sikkim.jpg"
     },
     "Tamil Nadu": {
         "name": "Tamil Nadu",
         "details": "Famous for its temples and classical music and dance.",
-        "image": "images/madurai.jpg"
+        "image": "images/TamilNadu.jpg"
     },
     "Telangana": {
         "name": "Telangana",
         "details": "Known for the Charminar and Golconda Fort.",
-        "image": "images/charminar.jpg"
+        "image": "images/Telangana.jpg"
     },
     "Tripura": {
         "name": "Tripura",
         "details": "Famous for its palaces and temples.",
-        "image": "images/neermahal.jpg"
+        "image": "images/Tripura.jpg"
     },
     "Uttar Pradesh": {
         "name": "Uttar Pradesh",
         "details": "Known for the Taj Mahal and Varanasi.",
-        "image": "images/tajmahal.jpg"
+        "image": "images/UttarPradesh.jpg"
     },
     "Uttarakhand": {
         "name": "Uttarakhand",
         "details": "Famous for its hill stations and pilgrimage sites.",
-        "image": "images/haridwar.jpg"
+        "image": "images/Uttarakhand.jpg"
     },
     "West Bengal": {
         "name": "West Bengal",
         "details": "Known for the Sundarbans and Victoria Memorial.",
-        "image": "images/kolkata.jpg"
+        "image": "images/WestBengal.jpg"
     },
     "Andaman and Nicobar Islands": {
         "name": "Andaman and Nicobar Islands",
         "details": "Famous for its pristine beaches and marine life.",
-        "image": "images/andaman.jpg"
+        "image": "images/AndamanAndNicobarIslands.jpg"
     },
     "Chandigarh": {
         "name": "Chandigarh",
         "details": "Known for its modern architecture and gardens.",
-        "image": "images/rockgarden.jpg"
+        "image": "images/Chandigarh.jpg"
     },
     "Dadra and Nagar Haveli and Daman and Diu": {
         "name": "Dadra and Nagar Haveli and Daman and Diu",
         "details": "Famous for its beaches and historical landmarks.",
-        "image": "images/daman.jpg"
+        "image": "images/DadraAndNagarHaveliAndDamanAndDiu.jpg"
     },
     "Lakshadweep": {
         "name": "Lakshadweep",
         "details": "Known for its coral reefs and water sports.",
-        "image": "images/agatti.jpg"
+        "image": "images/Lakshadweep.jpg"
     },
     "Delhi": {
         "name": "Delhi",
         "details": "The capital city of India, known for its rich history.",
-        "image": "images/delhi.jpg"
+        "image": "images/Delhi.jpg"
     },
     "Puducherry": {
         "name": "Puducherry",
         "details": "Famous for its French colonial architecture and beaches.",
-        "image": "images/puducherry.jpg"
+        "image": "images/Puducherry.jpg"
     },
     "Ladakh": {
         "name": "Ladakh",
         "details": "Known for its stunning landscapes and monasteries.",
-        "image": "images/leh.jpg"
+        "image": "images/Ladakh.jpg"
     },
     "Jammu and Kashmir": {
         "name": "Jammu and Kashmir",
         "details": "Famous for its beautiful valleys and houseboats.",
-        "image": "images/srinagar.jpg"
+        "image": "images/JammuAndKashmir.jpg"
     }
 }
