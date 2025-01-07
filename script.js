@@ -1,9 +1,13 @@
-// script.js
 const states = {
     "Maharashtra": {
         "name": "Maharashtra",
         "details": "Known for Mumbai, the financial capital of India.",
         "image": "images/mumbai.jpg"
+    },
+    "Karnataka": {
+        "name": "Karnataka",
+        "details": "Famous for Bengaluru, the Silicon Valley of India.",
+        "image": "images/bengaluru.jpg"
     },
     // Add more states here
 };
@@ -21,23 +25,30 @@ d3.json("assets/indiageojson.geojson").then(data => {
         .enter().append("path")
         .attr("d", path)
         .attr("class", "state")
-        .style("fill", "black") // Set the initial color to black
+        .style("fill", "white") // Set the initial color to white
+        .style("stroke", "black")
         .on("mouseover", function (event, d) {
-            const stateName = d.properties.name;
+            const stateName = d.properties.st_nm;
+            
             if (states[stateName]) {
                 const stateInfo = states[stateName];
-                d3.select("#state-name").text(stateInfo.name);
-                d3.select("#state-details").text(stateInfo.details);
+                console.log("State Info Found:", stateInfo); // Debug: Log state info
+                d3.select("#state-name").text(stateInfo.name); // Update state name
+                d3.select("#state-details").text(stateInfo.details); // Update state details
                 d3.select("#state-info")
                     .style("display", "block")
-                    .style("top", event.pageY + "px")
-                    .style("left", event.pageX + "px");
+                    .style("top", `${event.pageY + 10}px`) // Adjust position
+                    .style("left", `${event.pageX + 10}px`);
             }
-            d3.select(this).style("fill", "red"); // Change color to red on hover
+            d3.select(this).style("fill", "red"); // Highlight the state on hover
+        })        
+        .on("mousemove", function (event) {
+            d3.select("#state-info")
+                .style("top", `${event.pageY + 10}px`)
+                .style("left", `${event.pageX + 10}px`);
         })
         .on("mouseout", function () {
-            d3.select("#state-info").style("display", "none"); // Hide the info box
-            d3.select(this).style("fill", "black"); // Reset to default black color
-        });
-
+            d3.select("#state-info").style("display", "none");
+            d3.select(this).style("fill", "white"); // Reset color
+        });        
 });
