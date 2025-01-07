@@ -21,20 +21,23 @@ d3.json("assets/indiageojson.geojson").then(data => {
         .enter().append("path")
         .attr("d", path)
         .attr("class", "state")
+        .style("fill", "black") // Set the initial color to black
         .on("mouseover", function (event, d) {
             const stateName = d.properties.name;
             if (states[stateName]) {
                 const stateInfo = states[stateName];
                 d3.select("#state-name").text(stateInfo.name);
                 d3.select("#state-details").text(stateInfo.details);
-                d3.select("#state-info").style("display", "block");
-                d3.select("#state-info").style("top", event.pageY + "px").style("left", event.pageX + "px");
-                d3.select(this).style("fill", "lightblue");
-                d3.select(this).style("fill-opacity", "0.5");
+                d3.select("#state-info")
+                    .style("display", "block")
+                    .style("top", event.pageY + "px")
+                    .style("left", event.pageX + "px");
             }
+            d3.select(this).style("fill", "red"); // Change color to red on hover
         })
         .on("mouseout", function () {
-            d3.select("#state-info").style("display", "block");
-            d3.select(this).style("fill", "red");
+            d3.select("#state-info").style("display", "none"); // Hide the info box
+            d3.select(this).style("fill", "black"); // Reset to default black color
         });
+
 });
