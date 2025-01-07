@@ -14,6 +14,11 @@ const states = {
         "details": "Known for Kaziranga National Park and tea plantations.",
         "image": "images/kaziranga.jpg"
     },
+    "Karnataka": {
+        "name": "Karnataka",
+        "details": "Famous for Bengaluru, the Silicon Valley of India.",
+        "image": "images/bengaluru.jpg"
+    },
     "Bihar": {
         "name": "Bihar",
         "details": "Known for Bodh Gaya, the place of Buddha's enlightenment.",
@@ -208,8 +213,8 @@ d3.json("assets/indiageojson.geojson").then(data => {
         })        
         .on("mousemove", function (event) {
             d3.select("#state-info")
-                .style("top", `${event.pageY + 10}px`)
-                .style("left", `${event.pageX + 10}px`);
+                .style("top", `${event.pageY}px`)
+                .style("left", `${event.pageX - 100 }px`);
         })
         .on("mouseout", function () {
             d3.select("#state-info").style("display", "none");
