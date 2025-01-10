@@ -29,6 +29,7 @@ fetch('assets/states.json')
 
                         d3.select("#state-name").text(stateInfo.name); // Update state name
                         d3.select("#state-details").text(stateInfo.details); // Update state details
+                        d3.select("#state-image").attr("src", stateInfo.image); // Update state image
                         d3.select("#state-info")
                             .style("display", "block")
                             .style("top", `${event.pageY + 10}px`) // Adjust position
