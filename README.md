@@ -26,3 +26,10 @@ Discover India Interactive is a web-based project that displays a political map 
 
 2. Open the `index.html` file in your preferred web browser.
 
+## Contributors ✨
+
+Thanks to these wonderful people for their contributions!
+
+<a href="https://github.com/jaisw07/Discover-India-Interactive/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jaisw07/Discover-India-Interactive" />
+</a>
