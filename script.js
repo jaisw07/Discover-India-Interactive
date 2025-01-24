@@ -1,4 +1,5 @@
 let states = {};
+let districts = {};
 
 // Fetch states and GeoJSON data
 Promise.all([
@@ -6,7 +7,11 @@ Promise.all([
     d3.json("assets/indiageojson.geojson")
 ]).then(([stateData, geoData]) => {
     states = stateData;
-    console.log("States' data loaded successfully!");
+    console.log("States' and districts' data loaded successfully!");
+
+    // Separate districts from states
+    const districtFeatures = geoData.features.filter(d => d.properties.district); // District features
+    const stateFeatures = geoData.features.filter(d => !d.properties.district); // State features
 
     const svg = d3.select("#india-map")
         .attr("width", "100%")
@@ -15,56 +20,63 @@ Promise.all([
     const projection = d3.geoMercator().fitSize([1000, 600], geoData);
     const path = d3.geoPath().projection(projection);
 
-    // Draw states
-    svg.selectAll("path")
-        .data(geoData.features)
+    // Draw states as the background layer
+    svg.selectAll(".state")
+        .data(stateFeatures)
         .enter().append("path")
         .attr("d", path)
         .attr("class", "state")
         .style("fill", "white") // Initial color
-        .style("stroke", "black")
-        .on("mouseover", handleMouseOver)
+        .style("stroke", "black");
+
+    // Draw districts as the interactive foreground layer
+    svg.selectAll(".district")
+        .data(districtFeatures)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("class", "district")
+        .style("fill", "white") // Initial color
+        .style("stroke", "grey")
+        .on("mouseover", handleMouseOverDistrict)
         .on("mousemove", handleMouseMove)
         .on("mouseout", handleMouseOut);
 
-    // Add hitbox for Lakshadweep
-    svg.selectAll(".hitbox")
-        .data(geoData.features.filter(d => d.properties.st_nm === "Lakshadweep"))
-        .enter().append("circle")
-        .attr("cx", d => path.centroid(d)[0])
-        .attr("cy", d => path.centroid(d)[1])
-        .attr("r", 15) // Larger radius for easier hover
-        .style("fill", "transparent") // Invisible fill
-        .style("fill-opacity", "0") // Ensure no visual opacity
-        .style("pointer-events", "all") // Maintain interactivity
-        .on("mouseover", handleMouseOver)
-        .on("mousemove", handleMouseMove)
-        .on("mouseout", handleMouseOut);
-
-    // Event Handlers
-    function handleMouseOver(event, d) {
-        const stateName = d.properties.st_nm;
-        if (states[stateName]) {
-            const stateInfo = states[stateName];
-            d3.select("#state-name").text(stateInfo.name); // Update state name
-            d3.select("#state-details").text(stateInfo.details); // Update state details
-            d3.select("#state-image").attr("src", stateInfo.image); // Update state image
+    // Event Handlers for Districts
+    function handleMouseOverDistrict(event, d) {
+        const districtName = d.properties.district;
+        if (districtName) {
+            d3.select("#state-name").text(districtName); // Update district name
+            d3.select("#state-details").text(`District of ${d.properties.st_nm}`); // Show associated state
+            d3.select("#state-image").attr("src", states[d.properties.st_nm]?.image || ""); // Optional: State image
             d3.select("#state-info")
                 .style("display", "block")
-                .style("top", `${event.pageY + 10}px`) // Position the tooltip
+                .style("top", `${event.pageY + 10}px`)
                 .style("left", `${event.pageX + 10}px`);
         }
-        d3.select(this).style("fill", d => d.geometry.type === "Point" ? "none" : "red"); // Highlight state
+        d3.select(this).style("fill", "red"); // Highlight district
     }
 
     function handleMouseMove(event) {
-        d3.select("#state-info")
-            .style("top", `${event.pageY}px`)
-            .style("left", `${event.pageX - 100}px`);
+        const tooltip = d3.select("#state-info");
+        let tooltipX = event.pageX + 10;
+        let tooltipY = event.pageY + 10;
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Ensure tooltip stays within the viewport
+        if (tooltipX + tooltip.node().offsetWidth > windowWidth) {
+            tooltipX = windowWidth - tooltip.node().offsetWidth - 10;
+        }
+        if (tooltipY + tooltip.node().offsetHeight > windowHeight) {
+            tooltipY = windowHeight - tooltip.node().offsetHeight - 10;
+        }
+
+        tooltip.style("top", `${tooltipY}px`).style("left", `${tooltipX}px`);
     }
 
     function handleMouseOut() {
         d3.select("#state-info").style("display", "none"); // Hide tooltip
-        d3.select(this).style("fill", d => d.geometry.type === "Point" ? "none" : "white"); // Reset color
+        d3.select(this).style("fill", "white"); // Reset color
     }
 }).catch(error => console.error('Error fetching data:', error));
