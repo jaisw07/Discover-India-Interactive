@@ -7,7 +7,7 @@ Promise.all([
     d3.json("assets/indiageojson.geojson")
 ]).then(([stateData, geoData]) => {
     states = stateData;
-    console.log("States' and districts' data loaded successfully!");
+    console.log(states);
 
     // Separate districts from states
     const districtFeatures = geoData.features.filter(d => d.properties.district); // District features
@@ -50,7 +50,7 @@ svg.selectAll(".state")
         const districtName = d.properties.district;
         if (districtName) {
             d3.select("#state-name").text(districtName); // Update district name
-            d3.select("#state-details").text(`District of ${d.properties.st_nm}`); // Show associated state
+            d3.select("#state-details").html(`District of ${d.properties.st_nm}<hr>${states[d.properties.st_nm]?.details || "No details available."}`);
             d3.select("#state-image").attr("src", states[d.properties.st_nm]?.image || ""); // Optional: State image
             d3.select("#state-info")
                 .style("display", "block")
