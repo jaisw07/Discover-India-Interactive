@@ -20,26 +20,30 @@ Promise.all([
     const projection = d3.geoMercator().fitSize([1000, 600], geoData);
     const path = d3.geoPath().projection(projection);
 
-    // Draw states as the background layer
-    svg.selectAll(".state")
-        .data(stateFeatures)
-        .enter().append("path")
-        .attr("d", path)
-        .attr("class", "state")
-        .style("fill", "white") // Initial color
-        .style("stroke", "black");
+// Draw districts as the interactive foreground layer
+svg.selectAll(".district")
+    .data(districtFeatures)
+    .enter().append("path")
+    .attr("d", path)
+    .attr("class", "district")
+    .style("fill", "white") // Initial color
+    .style("stroke", "grey") // District boundary color
+    .style("stroke-width", "1px") // Thinner stroke for district boundaries
+    .on("mouseover", handleMouseOverDistrict)
+    .on("mousemove", handleMouseMove)
+    .on("mouseout", handleMouseOut);
 
-    // Draw districts as the interactive foreground layer
-    svg.selectAll(".district")
-        .data(districtFeatures)
-        .enter().append("path")
-        .attr("d", path)
-        .attr("class", "district")
-        .style("fill", "white") // Initial color
-        .style("stroke", "grey")
-        .on("mouseover", handleMouseOverDistrict)
-        .on("mousemove", handleMouseMove)
-        .on("mouseout", handleMouseOut);
+// Draw state boundaries on top of the district boundaries
+svg.selectAll(".state")
+    .data(stateFeatures)
+    .enter().append("path")
+    .attr("d", path)
+    .attr("class", "state")
+    .style("fill", "none") // Ensure state boundaries only provide the outline
+    .style("stroke", "black") // State boundary color overrides district boundaries
+    .style("stroke-width", "1px"); // Thicker stroke for prominence
+
+
 
     // Event Handlers for Districts
     function handleMouseOverDistrict(event, d) {
