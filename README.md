@@ -1,5 +1,5 @@
 # Discover India Interactive
-Discover India Interactive is a web-based educational tool that displays a detailed political map of India, now featuring district-wise mapping. When you hover over any district, it gets highlighted and displays a backdrop image of a famous tourist spot from that state. Additionally, a tooltip appears with details about the state and district.
+Discover India Interactive is an educational web tool offering a detailed political map of India, now enhanced with district-wise mapping. Hovering over any district highlights it and displays a backdrop image of a renowned tourist spot from that state. Additionally, a tooltip provides detailed information about the state and the specific district, making it a visually engaging and informative experience. Ideal for learning geography and exploring India's cultural diversity.
 
 ## Features
 - Interactive Political Map: Display a political map of India with district-level detail.
