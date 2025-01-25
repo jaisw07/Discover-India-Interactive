@@ -1,5 +1,5 @@
 # Discover India Interactive
-Discover India Interactive is a web-based project that displays a detailed political map of India, now featuring district-wise mapping. When you hover over any district, it gets highlighted and displays a backdrop image of a famous tourist spot from that state with a transparency effect. Additionally, a tooltip appears with details about the state and district.
+Discover India Interactive is a web-based educational tool that displays a detailed political map of India, now featuring district-wise mapping. When you hover over any district, it gets highlighted and displays a backdrop image of a famous tourist spot from that state. Additionally, a tooltip appears with details about the state and district.
 
 ## Features
 - Interactive Political Map: Display a political map of India with district-level detail.
@@ -46,7 +46,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Acknowledgements
 - D3.js: For data visualization.
-- GeoJSON Data: Sourced from [Source Name/Link].
+- GeoJSON Data: Sourced from <a href = https://github.com/udit-001/india-maps-data>udit-001's repository</a>.
 
 ## Contact
-For any questions or suggestions, feel free to reach out to jaiswalshrey07@gmail.com.
+For any questions or suggestions, feel free to reach out to <a href = "mailto:jaiswalshrey07@gmail.com">jaiswalshrey07@gmail.com</a>.
